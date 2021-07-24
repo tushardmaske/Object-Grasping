@@ -1,0 +1,45 @@
+# @package _group_
+# panda joint values for start positions:
+# banana [61.0,-104,-93,-105,-103,83,-140]
+objects:
+  table:
+    file: table/hightable.urdf
+    initial_pos: [ 0.3, 0.7, 0.02 ]
+    initial_orn: [0, 0, 0]
+    fixed: true
+
+  plate:
+      file: 029_plate/google_16k/textured.urdf
+      initial_pos: [ 0.4, 0.8, 0.61 ]
+      initial_orn: [ 0, 0, 0 ]
+      fixed: false
+
+  apple:
+      file: 013_apple/google_16k/textured.urdf
+      initial_pos: [ 0.4, 0.8, 0.63 ]
+      initial_orn: [ 0, 0, 0 ]
+      fixed: false
+
+  marmelade:
+    file: OrgangeMarmelad/meshes/OrangeMarmelade_25k_tex.urdf
+    initial_pos: [ 0.4, 0.8, 0.64 ]
+    initial_orn: [ 1.5707963267948966, 0, 0 ]
+    fixed: false
+
+  box:
+    file: 003_cracker_box/google_16k/textured.urdf
+    initial_pos: [ 0.4, 0.8, 0.69 ]
+    initial_orn: [ 0, 0, 2 ]
+    fixed: false
+
+  strawberry:
+    file: 012_strawberry/google_16k/textured.urdf
+    initial_pos: [ 0.4, 0.8, 0.61 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+
+  mug:
+    file: 025_mug/google_16k/textured.urdf
+    initial_pos: [ 0.4, 0.8, 0.624 ]
+    initial_orn: [0, 0, 0]
+    fixed: false

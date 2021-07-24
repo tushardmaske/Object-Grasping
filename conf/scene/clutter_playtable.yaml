@@ -1,0 +1,68 @@
+# @package _group_
+# panda joint values for start positions:
+# front left [-48,-43,124,-121,48,140,-92]
+# front right [-57.0,-58.0,84.0,-163.0,77.0,121.0,-169.0]
+objects:
+  table:
+    file: own_objects/modified_table_new_handles/playtable_modified.urdf
+    initial_pos: [0.7, 1.0, 0]
+    initial_orn: [0, 0, 3.141592653589793]
+    fixed: true
+    joints:
+      top_left_door_joint:
+        initial_state: 0  # revolute
+      slide_door_joint:
+        initial_state: 0  # prismatic
+  drawer:
+    file: own_objects/drawer/drawer.urdf
+    initial_pos: [0.475, 1.0, -0.004]
+    initial_orn: [0, 0, 3.141592653589793]
+    fixed: true
+    joints:
+      drawer_joint:
+        initial_state: 0  # prismatic
+  thuna:
+    file: ais_objects/thuna/thuna.urdf
+    initial_pos: [-0.1, 0.6, 0.54]
+    initial_orn: [0, 0, 0]
+    fixed: false
+  banana:
+    file: 011_banana/demo/banana_vhacd.urdf
+    initial_pos: [ -0.1, 0.9, 0.63 ]
+    initial_orn: [0, 0, 0]
+    fixed: false
+  bowl:
+    file: 024_bowl/google_16k/textured.urdf
+    initial_pos: [ -0.2, 0.65, 0.63 ]
+    initial_orn: [0, 0, 0]
+    fixed: false
+  salt:
+    file: ais_objects/salt/salt.urdf
+    initial_pos: [ 0.35, 0.9, 0.65 ]
+    initial_orn: [0, 0, 0]
+    fixed: false
+  milk:
+    file: ais_objects/milk/milk.urdf
+    initial_pos: [ 0.06, 0.9, 0.7 ]
+    initial_orn: [ 1.5707963267948966, 0, 0 ]
+    fixed: false
+  muesli:
+    file: ais_objects/muesli/muesli.urdf
+    initial_pos: [ -0.05, 0.55, 0.7 ]
+    initial_orn: [ 0, 0, 1.5707963267948966 ]
+    fixed: false
+  mug:
+    file: 025_mug/google_16k/textured.urdf
+    initial_pos: [ 0.5, 0.6, 0.63 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+  sweetener:
+    file: ais_objects/sweetener/sweetener.urdf
+    initial_pos: [ 0.5, 0.89, 0.61 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+  marmelade:
+    file: OrgangeMarmelad/meshes/OrangeMarmelade_25k_tex.urdf
+    initial_pos: [ 0.6, 0.65, 0.65 ]
+    initial_orn: [ 1.5707963267948966, 0, 0 ]
+    fixed: false

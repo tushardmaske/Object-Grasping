@@ -1,0 +1,18 @@
+load_dir: '/home/nayana/Desktop/DLLab/Project/Object-Grasping/rendereddata/RenderedData'
+save_dir: '/home/nayana/Desktop/DLLab/Project/Object-Grasping/models/model_full_data_ep2.pth'
+optimizer:
+    weight_decay: 0.0
+    lr: 0.001
+    lr_decay: 0.7
+    bn_momentum: 0.5
+    bnm_decay: 0.5
+    decay_step: 20000
+
+
+num_points: 3000
+epochs: 2
+batch_size: 6
+num_workers: 12
+gpus: 1
+training_partition: 80
+

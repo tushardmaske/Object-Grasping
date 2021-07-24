@@ -1,0 +1,21 @@
+# @package _group_
+_target_: vr_env.robot.robot.Robot
+filename: franka_panda/panda_digit.urdf
+base_position: [0.3, 0.15, 0.6]
+base_orientation: [0, 0, 1.5707963]
+initial_joint_positions: [-1.4653239989567401, 1.4817260599394233, 1.525733453119315, -2.435192704551518, -1.809600862016179, 1.8558817172819435, -1.23183583862092]
+max_joint_force: 200.0
+gripper_orientation_offset: [ 0, 3, 0.7853981633974483 ]
+limit_angle: [ 90, 0, 0, -1 ]
+constraint_force: 1000
+arm_joint_ids: [0, 1, 2, 3, 4, 5, 6]
+gripper_joint_ids: [9, 11]
+gripper_joint_limits: [0, 0.04]
+tcp_link_id: 15
+end_effector_link_id: 7
+gripper_cam_link: 14
+use_nullspace: true
+max_velocity: 2
+use_ik_fast: false
+euler_obs: true
+use_target_pose: true

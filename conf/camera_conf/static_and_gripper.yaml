@@ -1,0 +1,4 @@
+#@package _global_
+cameras:
+  - '${all_cameras.static}'
+  - '${all_cameras.gripper}'

@@ -1,0 +1,82 @@
+seed: 0
+use_vr: true
+data_path: data
+save_dir: ../
+record: true
+
+#tactile:
+#  _target_: src.camera.tactile_sensor.TactileSensor
+#  name: tactile
+#  width: 120
+#  height: 160
+#  digit_link_ids: [10, 12] # ${robot.digit_link_ids}
+#  visualize_gui: True
+#  config_path: conf/digit_sensor/config_digit.yml
+allcameras:
+  gripper:
+    _target_: vr_env.camera.gripper_camera.GripperCamera
+    name: gripper
+    fov: 75
+    aspect: 1
+    nearval: 0.01
+    farval: 2
+    width: 200
+    height: 200
+    gripper_cam_link: 12 #
+
+  static:
+    _target_: vr_env.camera.static_camera.StaticCamera
+    name: static
+    fov: 45
+    aspect: 1
+    nearval: 0.01
+    farval: 2
+    width: 200
+    height: 200
+    look_at: [ 0.1, 0.8, 0.7 ]
+    look_from: [ 0.3, -0.2, 1.3 ]
+    #cid: 1
+
+env:
+  _target_: vr_env.envs.play_table_env.PlayTableSimEnv
+  _recursive_: false
+  cameras: []  # ['${tactile}']
+  seed: 0
+  bullet_time_step: 240.0
+  global_scaling: 0.8
+  use_vr: ${use_vr}
+  show_gui: True
+  robot_cfg: ${robot}
+  data_path: ${data_path}
+  scene: ${scene}
+  euler_obs: ${robot.euler_obs}
+  use_scene_info: false
+  use_egl: true
+  control_freq: 30
+  distribution: uniform
+  num_objects: 1
+
+vr_input:
+  _target_: vr_env.io_utils.vr_input.VrInput
+  vr_controller: ${vr_controller}
+  limit_angle: [90, 0, 0, -1]
+  visualize_vr_pos: true
+  reset_button_queue_len: 60
+
+data_recorder:
+  record: ${record}
+  record_fps: 30.0
+  show_fps: false
+  enable_tts: true
+
+hydra:
+  run:
+    dir: ${save_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+defaults:
+  - vr_controller: vive
+  - scene: project_scene
+  - robot: panda
+  - tasks: play_table_tasks
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog

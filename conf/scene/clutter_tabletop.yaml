@@ -1,0 +1,55 @@
+# @package _group_
+# panda joint values for start positions:
+# apple [18,47,55,-125,105,219,-170]
+# banana [61.0,-104,-93,-105,-103,83,-140]
+objects:
+  table:
+    file: table/hightable.urdf
+    initial_pos: [ 0.3, 0.7, 0.02 ]
+    initial_orn: [0, 0, 0]
+    fixed: true
+  mug:
+    file: 025_mug/google_16k/textured.urdf
+    initial_pos: [ 0.13, 0.7, 0.65 ]
+    initial_orn: [ 0, 0, 3.141592653589793 ]
+    fixed: false
+  plate:
+    file: 029_plate/google_16k/textured.urdf
+    initial_pos: [ 0.35, 0.92, 0.61 ]
+    initial_orn: [0, 0, 0]
+    fixed: false
+  knife:
+    file: 032_knife/google_16k/textured.urdf
+    initial_pos: [ 0.2125, 0.95, 0.61 ]
+    initial_orn: [ 3.141592653589793, 0, 1.5707963267948966 ]
+    fixed: false
+  oil:
+    file: ais_objects/oil/oil.urdf
+    initial_pos: [ 0.3, 0.56, 0.7 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+  orange:
+    file: 017_orange/google_16k/textured.urdf
+    initial_pos: [ 0.4875, 0.4, 0.61 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+  tea:
+    file: ais_objects/teayellow/teayellow.urdf
+    initial_pos: [ 0.68, 0.8, 0.65 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+  apple:
+    file: 013_apple/google_16k/textured.urdf
+    initial_pos: [ -0.09, 0.4, 0.61 ]
+    initial_orn: [ 0, 0, 0 ]
+    fixed: false
+  banana:
+    file: 011_banana/demo/banana_vhacd.urdf
+    initial_pos: [ 0.8, 0.5, 0.61 ]
+    initial_orn: [0, 0, 0]
+    fixed: false
+  milk:
+    file: ais_objects/milk/milk.urdf
+    initial_pos: [ 0.05, 0.85, 0.68 ]
+    initial_orn: [ 1.5707963267948966, 0, 0 ]
+    fixed: false

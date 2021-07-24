@@ -1,0 +1,3 @@
+cameras:
+  - '${all_cameras.static}'
+  - '${all_cameras.tactile}'

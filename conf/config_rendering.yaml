@@ -1,0 +1,67 @@
+load_dir: ???
+data_path: data
+save_dir: ???
+show_gui: true
+processes: 1
+max_episode_frames: 1
+save_body_infos: true
+set_static_cam: false
+
+all_cameras:
+  static:
+    _target_: vr_env.camera.static_camera.StaticCamera
+    name: static
+    fov: 45
+    aspect: 1
+    nearval: 0.01
+    farval: 2
+    width: 200
+    height: 200
+    look_at: [ 0.1, 0.8, 0.7 ]
+    look_from: [ 0.3, -0.2, 1.3 ]
+
+  gripper:
+    _target_: vr_env.camera.gripper_camera.GripperCamera
+    name: gripper
+    fov: 75
+    aspect: 1
+    nearval: 0.01
+    farval: 2
+    width: 200
+    height: 200
+    gripper_cam_link: 12 # TODO do not hardcode this, use robot property? e.g. ${robot.camera_link_id}
+
+  opposing:
+    _target_: vr_env.camera.static_camera.StaticCamera
+    name: opposing
+    fov: 75
+    aspect: 1
+    nearval: 0.01
+    farval: 2
+    width: 200
+    height: 200
+    look_at: [ 0.4, 0.5, 0.6 ]
+    look_from: [ 0.4, 1.5, 0.9 ]
+
+  tactile:
+    _target_: vr_env.camera.tactile_sensor.TactileSensor
+    name: tactile
+    width: 120
+    height: 160
+    digit_link_ids: [10, 12] # ${robot.digit_link_ids}
+    visualize_gui: False
+    config_path: conf/digit_sensor/config_digit.yml
+
+defaults:
+  - camera_conf: gripper
+
+env:
+  cameras: ['${allcameras.gripper}']
+  show_gui: ${show_gui}
+  use_vr: False
+  distribution: uniform
+  num_objects: 1
+
+hydra:
+  run:
+    dir: ${save_dir}/${now:%Y-%m-%d}/${now:%H-%M-%S}
